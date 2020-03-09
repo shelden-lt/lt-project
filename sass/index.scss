@@ -473,7 +473,7 @@ a{
             background-color: #fff;
             opacity: .7;
             display: none;
-           
+           z-index: 10;
            i{
                 width: 25px;
                 height: 25px;
@@ -516,7 +516,7 @@ a{
         height: 447px;
         position: absolute;
         top: 15px;
-        right: 74px;
+        right: 100px;
         z-index: 10;
         ul li{
             width: 260px;
@@ -548,23 +548,24 @@ a{
     }
     .safebanner{
         position: relative;
-        width: 1200px;
+        width: 1025px;
         margin: 0 auto;
         height: 480px;
         overflow: hidden;
+        left: 87px;
         #sliderList{
             position: absolute;
             margin: 0;
-            width: 8400px;
+            width: 7175px;
             top: 0;
             left: 0;
           
             li{
                 float: left;
-                width: 1200px;
+                width: 1025px;
                 height: 480px;
                 img{
-                    width: 1200px;
+                    width: 1025px;
                     height:480px;
                 }
             }
@@ -572,7 +573,7 @@ a{
         #numList{
             position: absolute;
             bottom: 10px;
-            left:447px;
+            left: 260px;
             li{
                 float: left;
                 width: 25px;
@@ -591,6 +592,159 @@ a{
         }
        #numList li.hover{
             background-color: #d3892b;
+        }
+    }
+}
+.goods{
+    // @include safe;
+    height: 545px;
+    margin-top: 35px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    .leftimg{
+        position: absolute;
+        top: 0;
+        left: -127px;
+    }
+    .rightimg{
+        position: absolute;
+        top: 0;
+        right: -117px;
+    }
+    .goodssafe{
+        @include safe;
+        height: 545px;
+        .listbox{
+            width: 945px;
+            height: 545px;
+            float: left;
+                h4{
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 1;
+                    margin: 0;
+                    padding: 0 0 10px 3px;
+                    color: #333;
+                    b{
+                        font-weight: normal;
+                        font-size: 12px;
+                        color: #565656;
+                        padding-left: 16px;
+                    }
+                }
+                .goodsList{
+                    width: 945px;
+                    height: 519px;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid #e8e8e8;
+                    border-right: 1px solid #e8e8e8;
+                    ul{
+                        margin: 0;
+                        li{
+                            width: 236px;
+                            height: 259px;
+                            box-sizing: border-box;
+                            float: left;
+                            border-top: 1px solid #e8e8e8;
+                            border-left: 1px solid #e8e8e8;
+                            position: relative;
+                            overflow: hidden;
+                            .pricebox{
+                                width: 236px;
+                                height: 54px;
+                                overflow: hidden;
+                                span{
+                                    font-size: 14px;
+                                    padding: 11px;
+                                    white-space: nowrap;
+                                    a{
+                                        color: #323232;
+                                    }
+                                    a:hover{
+                                        text-decoration: none;
+                                    }
+                                }
+                                b{
+                                    color: #f33f00;
+                                    font-style: 12px;
+                                    padding-left: 15px;
+                                    i{
+                                        font-style: normal;
+                                        font-size: 9px;
+                                    }
+                                }
+                                
+                            }
+                            img{
+                                width: 204px;
+                                height: 204px;
+                                padding-left: 22px;
+                            }
+                            .car{
+                                position: absolute;
+                                width: 150px;
+                                height: 25px;
+                                background-color: #8bc239;
+                                bottom: -25px;
+                                left: 41px;
+                                border-radius: 4px;
+                                text-align: center;
+                                line-height: 25px;
+                                color: #fff;
+                                em{
+                                    padding-right: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+        .news{
+            width: 224px;
+            height: 529px;
+            float: right;
+            margin-top: 16px;
+            box-sizing: border-box;
+            border: 1px solid #e8e8e8;
+            overflow: hidden;
+            img{
+                width: 220px;
+                height: 300px;
+                margin-left: 1px;
+            }
+            dl{
+                padding: 16px 10px 0 10px;
+                margin: 0;
+                dt{
+                    font-size: 14px;
+                    color: #323232;
+                    font-weight: normal;
+                    border-bottom: 1px dashed #dbdbdb;
+                    padding-bottom: 11px;
+                    a{
+                        padding-left: 110px;
+                        color: #969696;
+                        font-size: 12px;
+                        &:hover{
+                            text-decoration: none;
+                            color: #76ac25;
+                        }
+                    }
+                }
+                dd{
+                    margin: 0;
+                   
+                    width: 196px;
+                    height: 26px;
+                   overflow: hidden;
+                   line-height: 26px;
+                   a{
+                    font-size: 12px;
+                    color: #fa6400;
+                   }
+                }
+            }
         }
     }
 }
