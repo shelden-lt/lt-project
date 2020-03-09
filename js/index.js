@@ -129,4 +129,10 @@ $(function(){
             $("#numList li").eq(index).addClass("hover").siblings().removeClass("hover");
          },3000)
     })
+    //加入购物车
+    $(".goods .goodsList ul li").hover(function(){
+        $(this).children(".car").stop().animate({"bottom":"10"},200)
+    },function(){
+        $(this).children(".car").stop().animate({"bottom":"-25"},400)
+    })
 })
