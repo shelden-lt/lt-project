@@ -595,6 +595,28 @@ a{
         }
     }
 }
+@mixin price {
+    span{
+        font-size: 14px;
+        padding: 11px;
+        white-space: nowrap;
+        a{
+            color: #323232;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+    }
+    b{
+        color: #f33f00;
+        font-style: 12px;
+        padding-left: 15px;
+        i{
+            font-style: normal;
+            font-size: 9px;
+        }
+    }
+}
 .goods{
     // @include safe;
     height: 545px;
@@ -654,26 +676,7 @@ a{
                                 width: 236px;
                                 height: 54px;
                                 overflow: hidden;
-                                span{
-                                    font-size: 14px;
-                                    padding: 11px;
-                                    white-space: nowrap;
-                                    a{
-                                        color: #323232;
-                                    }
-                                    a:hover{
-                                        text-decoration: none;
-                                    }
-                                }
-                                b{
-                                    color: #f33f00;
-                                    font-style: 12px;
-                                    padding-left: 15px;
-                                    i{
-                                        font-style: normal;
-                                        font-size: 9px;
-                                    }
-                                }
+                                @include price;
                                 
                             }
                             img{
@@ -747,5 +750,156 @@ a{
             }
         }
     }
+}
+.productbox{
+    @include safe;
+    height: 600px;
+    img{
+        width: 1190px;
+        height: 100px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+    }
+   div{
+       height: 470px;
+       width: $width;
+       .leftpro{
+            width: 250px;
+            height: 470px;
+            float: left;
+            .shui{
+                width: 225px;
+                height: 50px;
+                background: #76ac25 url(../img/furits.png) no-repeat 75px 17px;
+                margin-left: 10px;
+                border-radius: 5px 0 0 0 ;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                line-height: 50px;
+                padding-left: 15px;
+            }
+            img{
+                width: 260px;
+                height: 420px;
+                margin-left: 0;
+            }
+        }
+        .rightpro{
+            width: 950px;
+            height: 468px;
+            float: left;
+            border-top: 1px solid #adcd7c;
+            border-bottom: 1px solid #f4f4f4;
+            .prolist{
+                width: 730px;
+                height: 468px;
+                float: left;
+                ul {
+                    margin: 0;
+                    padding-left: 10px;
+                    li{
+                        width: 160px;
+                        height: 211px;
+                        float: left;
+                        margin: 15px 8px;
+                       .propic{
+                           width: 160px;
+                           height: 160px;
+                           position: relative;
+                           overflow: hidden;
+                           img{
+                                width: 160px;
+                                height: 160px;
+                                margin: 0; 
+                            }
+                            .car{
+                                width: 160px;
+                                height: 25px;
+                                background-color: #76ac25 ;
+                                border-radius: 4px;
+                                position: absolute;
+                                bottom: -25px;
+                                left: 0;
+                                text-align: center;
+                                line-height: 25px;
+                                color: #fff;
+                                font-size: 12px;
+                                em{
+                                    padding-right: 12px;
+                                }
+                            }
+                       }
+                        .pricebox_2{
+                            width: 160px;
+                            height: 51px;
+                            overflow: hidden;
+                            @include price;
+                            b,span{
+                                padding-left: 0;
+                            }
+                            span{
+                                font-size: 12px;
+                            }
+                            .car{
+                                width: 160px;
+
+                            }
+                        }
+                    }
+                }
+            }
+            .sel{
+                width: 220px;
+                height: 468px;
+                float: left;
+                .seltop{
+                    width: 220px;
+                    height: 238px;
+                    background-color: #f4f4f4;
+                    ul {
+                        margin: 0;
+                        padding: 25px 16px 0 15px;
+                        li{
+                            float: left;
+                            width: 55px;
+                            height: 55px;
+                            border-radius: 50%;
+                            background: url(../img/index_icon_new.png) no-repeat 0 0;
+                            margin: 4px;
+                            text-align: center;
+                            line-height: 55px;
+                            color: #333333;
+                            &:hover{
+                                background: url(../img/index_icon_new.png) no-repeat 0px -61px;
+                                color: #fff;
+                            }
+                         }
+                    }
+                }
+                .selbot{
+                    width: 220px;
+                    height: 230px;
+                    position: relative;
+                    img{
+                        width: 220px;
+                        height: 230px;
+                        margin: 0;
+                    }
+                    p{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        background: url(../img/index_icon_new.png) no-repeat -204px 0;
+                        top: 65px;
+                        left: 15px;
+                        &:hover{
+                            background: url(../img/index_icon_new.png) no-repeat -204px -33px;
+                        }
+                    }
+                }
+            }
+        }
+   }
 }
 
