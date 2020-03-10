@@ -152,4 +152,11 @@ $(function(){
     },function(){
         $(this).children(".recpic").children(".car_3").stop().animate({"bottom":"-25px"},200);
     })
+    //
+    $(".bottom .imgbox .imgsm").mouseenter(function(){
+        $(".imgla").show();
+    })
+    $(".bottom .imgbox .imgla").mouseleave(function(){
+        $(".imgla").hide();
+    })
 })
