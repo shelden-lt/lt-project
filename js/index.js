@@ -143,8 +143,13 @@ $(function(){
     })
     //加入购物车
     $(".productbox .prolist ul li").hover(function(){
-        $(this).children().children(".car").stop().animate({"bottom":"0"},200)
+        $(this).children().children(".car").stop().animate({"bottom":"0"},200);
     },function(){
-        $(this).children().children(".car").stop().animate({"bottom":"-25"},400)
+        $(this).children().children(".car").stop().animate({"bottom":"-25"},400);
+    })
+    $(".recommend ul li").hover(function(){
+        $(this).children(".recpic").children(".car_3").stop().animate({"bottom":"0"},200);
+    },function(){
+        $(this).children(".recpic").children(".car_3").stop().animate({"bottom":"-25px"},200);
     })
 })
