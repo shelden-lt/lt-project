@@ -135,4 +135,16 @@ $(function(){
     },function(){
         $(this).children(".car").stop().animate({"bottom":"-25"},400)
     })
+    //shui
+    $(".shui").hover(function(){
+        $(this).css({"background-color":"#a4f031"});
+    },function(){
+        $(this).css({"background-color":"#76ac25"});
+    })
+    //加入购物车
+    $(".productbox .prolist ul li").hover(function(){
+        $(this).children().children(".car").stop().animate({"bottom":"0"},200)
+    },function(){
+        $(this).children().children(".car").stop().animate({"bottom":"-25"},400)
+    })
 })
