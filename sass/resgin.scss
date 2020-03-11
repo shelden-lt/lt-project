@@ -35,7 +35,8 @@ img{
 .bottom{
     @include safe;
     height: 36px;
-    background-color: palegoldenrod;
+   .yonghu{
+    height: 36px;
     p{
         float: left;
         height: 36px;
@@ -43,7 +44,9 @@ img{
         background-color: #fff;
         border: 1px solid #d5d5d5;
         border-bottom: none;
-        margin: 0 370px 0 333px;
+        margin: 0 330px 0 383px;
+        text-align: center;
+        line-height: 36px;
     }
     span{
         font-size: 12px;
@@ -54,8 +57,37 @@ img{
         a{
             color: #6e9b0c;
         }
+        
     }
-    .zhuces{
+   }
+    .zhuce{
         @include safe;
+        height: 450px;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid #d6d5d5;
+        padding: 50px;
+        form{
+            width:360px;
+            text-align: right;
+            float: left;
+            input{
+                width: 268px;
+                height: 36px;
+                border: 1px solid #d6d5d5;
+                margin-bottom: 20px;
+               
+            }
+            #btn{
+                color: #fff;
+                background-color: #6e9b0c;
+                border-radius: 5px;
+                border: none;
+            }
+        }
+        img{
+            float: right;
+            right: 20px;
+        }
     }
 }

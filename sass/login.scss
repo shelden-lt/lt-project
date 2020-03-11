@@ -1,0 +1,143 @@
+@mixin safe {
+    width: 1002px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+img{
+    display: block;
+    border: none;
+}
+
+.top{
+    @include safe;
+    height: 90px;
+    padding-bottom: 80px;
+    img{
+        float: left;
+        margin: 10px;
+    }
+    p{
+        font-size: 24px;
+        color: #515151;
+        float: left;
+    }
+}
+.bottom{
+    @include safe;
+    img{
+        float: left;
+    }
+    .log{
+        width: 400px;
+        height: 445px;
+        float: right;
+        .logtop{
+            h5{
+                display: inline;
+                font-size: 18px;
+                font-weight: normal;
+                padding-right: 280px;
+                margin: 0;
+            }
+            a{
+                font-size: 12px;
+                color: #666666;
+               
+            }
+            span{
+                display: inline-block;
+                width: 19px;
+                height: 19px;
+                border: 1px solid #b0b0b0;
+                border-radius: 50%;
+                color: #b0b0b0;
+                text-align: center;
+                line-height: 19px;
+            }
+        }
+        .logcon{
+            width: 400px;
+            height: 404px;
+            box-sizing: border-box;
+            border: 1px solid #d5d5d5;
+            border-top: 2px solid #69af05;
+            margin-top: 16px;
+            h6{
+                margin: 0;
+                height: 16px;
+                font-weight: normal;
+                font-size: 12px;
+                color: #666;
+                background: url(../img/log_logo.png) no-repeat 24px 10px;
+                padding:10px 0 50px 50px;
+            }
+           
+            form{
+                width:360px;
+                text-align: right;
+                i{
+                    display: inline-block;
+                    width: 43px;
+                    height: 44px;
+                    background-color: #f0f0f0;
+                    color:#bebebe;
+                    font-size: 18px;
+                   text-align: center;
+                   line-height: 43px;;
+                   margin-bottom: 20px;
+                   border: 1px solid #d6d5d5;
+                }
+                 input{
+                    width: 268px;
+                    height: 44px;
+                    border: 1px solid #d6d5d5;
+                    box-sizing: border-box;
+                    margin-bottom: 20px;
+                    padding-top: 5px;
+                       
+                }
+                #btn{
+                    width: 313px;
+                    color: #fff;
+                    background-color: #6e9b0c;
+                    border-radius: 5px;
+                    border: none;
+                    margin-top: 60px;
+                }
+             }
+            .fang{
+                width: 358px;
+                height: 35px;
+                margin-left: 20px;
+                border-top: 1px solid #d5d5d5;
+                padding-top: 10px;
+                span{
+                    font-size: 20px;
+                   &:nth-of-type(1){
+                       color: #0ea6e7;
+                   }
+                   &:nth-of-type(2){
+                    color: #f08141;
+                }
+                &:nth-of-type(3){
+                    color: #3fe74d;
+                }
+                   
+                }
+                i{
+                    font-style: normal;
+                    font-style: 12px !important;
+                    color: #565151;
+                    padding-left: 4px;
+                    padding-right: 42px;
+                }
+                b{
+                    display: inline-block;
+                    padding-right: 19px;
+                }
+            }
+        }
+    }
+}

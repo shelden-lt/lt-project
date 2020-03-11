@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const connect = require("gulp-connect");
 const sourcemaps = require("gulp-sourcemaps");
+const babel = require("gulp-babel");
 //服务器
 gulp.task("server",done=>{
     connect.server({
@@ -29,6 +30,15 @@ gulp.task("js",done=>{
     .pipe(connect.reload()) //让页面自动刷新
      done();
  })
+ //balbel
+ gulp.task("babel",done=>{
+    gulp.src("js/*.js")
+    .pipe(babel({
+        presets:["@babel/env"] //@babel/preset-env
+    }))
+    .pipe(gulp.dest("dist/js"));
+    done();
+})
 //sass
 gulp.task("sass",done=>{
    gulp.src("sass/*.scss")
