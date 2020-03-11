@@ -82,6 +82,9 @@ $(function(){
         $(this).removeClass("con");
         $(".leftnav dl").removeClass("lei");
     })
+    $(".leftnav a,.leftnav em").click(function(){
+        location.href="details.html"
+    })
     //右浮窗
     $(".msgbox ul li").hover(function(){
         let index = $(this).index();

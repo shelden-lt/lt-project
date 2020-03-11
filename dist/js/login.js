@@ -4,6 +4,11 @@ $(function(){
             username : $("#name").val(),
             password : $("#pw").val()
         },data=>{
+            console.log(data);
+            var id = data.data.id;
+            var token = data.data.token;
+            localStorage.setItem("uid",id);
+            localStorage.setItem("token",token);
             if(data.code === 1){
                 location.href="../index.html";
             }else{
