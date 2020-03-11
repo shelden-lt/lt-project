@@ -1,0 +1,25 @@
+@mixin safe {
+    width: 1002px;
+    margin: 0 auto;
+}
+.top{
+    @include safe;
+    height: 90px;
+    background-color: yellowgreen;
+    img{
+        float: left;
+        margin: 10px;
+    }
+    p{
+        font-size: 24px;
+        color: #515151;
+        float: left;
+        i{
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: #c7c7c7;
+            border-radius: 50%;
+        }
+    }
+}
