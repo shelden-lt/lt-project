@@ -41,13 +41,13 @@ $(function(){
             str +=
             `
             <li data-id = "${data.data[i].pid}">
-                <img src="${data.data[i].pimg}" alt="">
+                <img src="${data.data[i].pimg}" alt="" class="pimg">
                 <div class="pricebox">
                     <b> <i>￥</i>${data.data[i].pprice}</b><br>
                     <span> <a href="#">${data.data[i].pdesc}</a></span>
                 </div>
                 <div class="add">
-                    <span class="minus">-</span><span class="num">${num}</span><span class="puls">+</span>
+                    <span class="minus">-</span><input type="text" class="num" value="${num}"><span class="puls">+</span>
                     <span class="addcar">
                         <i class="icon iconfont icon-gouwugouwuchedinggou"></i>
                         加入购物车
@@ -58,14 +58,10 @@ $(function(){
             
         }
         $(".liebiao").html(str);
-        let index = 0;
-        $(".puls").eq(0).click(function(){
-            index = $(this).index();
-            num++;
-            $(".num").eq(index-1).text(num);
+        $(".pimg").click(function(){
+            location.href="../shopcar.html"
+            
         })
-        
-
         $(".addcar").click(function(){
           location.href="../shopcar.html"
         })
