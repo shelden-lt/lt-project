@@ -4,8 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/shopcar.css">
+    <script src="boot/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="boot/css/bootstrap.min.css">
 </head>
 <body>
-    购物车页面
+    <!-- nav -->
+   <div class= "navbox">
+    <div class="navsafe">
+       <!-- 地址 -->
+       <span class="text">冷链配送 顺丰到家 送至：</span>
+       <div class="dropdown">
+          <button class="btndown">
+              <span class="caret"></span>
+              大连
+          </button>
+          <div  class="add-nav">
+              <p>
+                  请选择您的收货城市：
+                  <i></i>
+              </p>
+              <div class="city-middle">
+                  <ol>
+                      <li><a href="#">北京</a></li>
+                      <li><a href="#">上海</a></li>
+                      <li><a href="#">广州</a></li>
+                      <li><a href="#">深圳</a></li>
+                      <li><a href="#">天津</a></li>
+                      <li><a href="#">苏州</a></li>
+                      <li><a href="#">杭州</a></li>
+                      <li><a href="#">南京</a></li>
+                      <li><a href="#">无锡</a></li>
+                      <li><a href="#">青岛</a></li>
+                      <li><a href="#">武汉</a></li>
+                  </ol>
+              </div>
+              <div class="morecity">
+                  <div>更多城市：</div>
+                          <ul class="huadong">
+                              <li>华东：</li>
+                              <li>上海</li>
+                              <li>浙江</li>
+                              <li>江苏</li>
+                              <li>安徽</li>
+                          </ul>                        
+                          <ul class="huanan">
+                              <li>华南：</li>
+                              <li>广东</li>
+                              <li>福建</li>
+                              <li>海南</li>
+                              <li>广西</li>
+                          </ul>                                                             
+                          <ul class="huabei">
+                              <li>华北：</li>
+                              <li>北京</li>
+                              <li>天津</li>
+                              <li>河北</li>
+                              <li>山东</li>
+                              <li>山西</li>
+                              <li>内蒙古</li>
+                          </ul>                                       
+                          <ul class="huazhong">
+                              <li>华中：</li>
+                              <li> 湖北</li>
+                              <li>江西</li>
+                              <li>湖南</li>
+                              <li>河南</li>
+                          </ul>
+                          <ul class="dongbei">
+                              <li>东北：</li>
+                              <li>辽宁</li>
+                              <li>吉林</li>
+                              <li>黑龙江</li>
+                          </ul> 
+                          <ul class="xinan">
+                              <li>西南：</li>
+                              <li>重庆</li>
+                              <li>四川</li>
+                              <li>云南</li>
+                              <li>贵州</li>
+                          </ul>
+                          <ul class="xibei">
+                              <li>西北：</li>
+                              <li>陕西</li>
+                              <li>甘肃</li>
+                              <li>宁夏</li>
+                              <li>青海</li>
+                          </ul>
+              </div>
+          </div>
+        </div>
+        <!-- 导航 -->
+           <ul>
+               <li>嘿，欢迎来顺丰优选！</li>
+               <li>
+                   <a href="login.html" target="_blank">请登录</a>
+                   <span>|</span>
+                   <a href="resgin.html">免费注册</a>
+                   <div class="hot">
+                       <img src="img/hot.gif" alt="">
+                       <div class="hot-msg"><a href="#">新注册会员送100元券包</a></div>
+                   </div>
+               </li>
+               <li>
+                   <a href="#">我的订单</a>
+               </li>
+               <li class="active">
+                  <a href="#" class="you">我的优选</a>
+                  <span class="caret"></span>
+                  <ul class="dropdownmenu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#">我的订单</a></li>
+                      <li><a href="#">我的积分</a></li>
+                      <li><a href="#">我的收藏</a></li>
+                      <li><a href="#">我的优选卡</a></li>
+                      <li><a href="#">我的优惠券</a></li>
+                  </ul>
+               </li>
+               <li>
+                   <i class="icon iconfont icon-shouji"></i>
+                   <a href="#">移动端客服</a>
+               </li>
+               <li><a href="#">在线客服</a></li>
+               <li class="active1">
+                  <a href="#" class="you1">帮助中心</a>
+                  <span class="caret"></span> 
+                      <ul class="dropdownmenu1" aria-labelledby="dropdownMenu1">
+                          <li><a href="#">购物指南</a></li>
+                          <li><a href="#">配送服务</a></li>
+                          <li><a href="#">支付方式</a></li>
+                          <li><a href="#">售后服务</a></li>
+                          <li><a href="#">客服邮箱</a></li>
+                          <li><a href="#">投诉与建议</a></li>
+                      </ul>
+               </li>
+               <li class="active2">
+                  <a href="#" class="daohang">网站导航</a>
+                  <span class="caret"></span>
+                  <div class="subnav">
+                      <dl>
+                          <dt class="title1">商品分类</dt>
+                          <dd>肉类海鲜</dd>
+                          <dd>新鲜果蔬</dd>
+                          <dd>速食冷藏</dd>
+                          <dd>酒水饮料</dd>
+                          <dd>休闲糖巧</dd>
+                          <dd>粮油干货</dd>
+                          <dd>冲调茶饮</dd>
+                          <dd>优选国际</dd>
+                      </dl>
+                      <dl>
+                          <dt class="title2">特色频道</dt>
+                          <dd>跨境直发</dd>
+                          <dd>企业专区</dd>
+                          <dd>红酒廊</dd>
+                          <dd>寰宇美食</dd>
+                      </dl>
+                      <dl>
+                          <dt class="title3">更多</dt>
+                          <dd>客户端</dd>
+                          <dd>关注我们</dd>
+                          <dd class="last">客服电话：4006-917-666</dd>
+                      </dl>
+                  </div>
+               </li>
+               <li>
+                  <span class="icon iconfont icon-weibo1 "></span>
+                  <span class="icon iconfont icon-tubiao-weixin "></span>
+               </li>
+           </ul>
+    </div>
+ </div>
+ <!-- logo -->
+ <div class="shoplogo">
+    <div class="top-shoplogo">
+        <img src="img/indexLogo2019.png" alt="">
+        <div>
+            <span class="l-1">1、我的购物车</span>
+            <span class="l-2">2、填写核对订单信息</span>
+            <span class="1-3">3、成功提交订单</span>
+        </div>
+    </div>
+    <div class="down-shoplogo">
+        <h3>我的购物车</h3>
+        <span>送至：</span><input type="text" value="辽宁省大连市西岗区">
+        <i>提示：请选择收货地址，查看更准确信息</i>
+    </div>
+ </div>
+<!-- conent -->
+<div class="content">
+    <div class="cartThead">
+        <div class="tCol tCheckbox">
+            <input name="checkall"type="checkbox" class="selectAll" checked="checked">
+            全选
+        </div>
+        <div class="tCol tGoods">商品</div>
+        <div class="tCol tPrice">单价</div>
+        <div class="tCol tPromotion">优惠</div>
+        <div class="tCol tQuantity">数量</div>
+        <div class="tCol tWeight">重量(含包装)</div>
+        <div class="tCol tSubtotal">小计</div>
+        <div class="tCol tInventory">库存状态</div>
+        <div class="tCol tOperator">操作</div>
+    </div>
+    <div class="cartCheckbox">
+        <input name="cart_list_yx" id="Zpu" type="checkbox" class="selectAll ptm" checked="checked">优选商品
+    </div>
+    <ul class="cartcontent">
+        <li>
+            <div class="pItem pCheckbox">
+                <input name="cart_list" class="chk_p chk_p_main" value="main-0-26420751-348509" type="checkbox" checked="checked">
+            </div>
+            <div class="pItem cart_pimg">
+                <img src="img/160x160_10.jpg"  width="62" height="62">    
+            </div>
+            <div class=" pItem cart_pname">
+                <a href="#" title="河南焦作温县 沙土铁棍山药(简装) L50cm 净重2.5kg">
+                    河南焦作温县 沙土铁棍山药(简装) L50cm 净重2.5kg
+                </a>
+            </div>
+            <div class="pItem spree_p">
+                   ¥79
+            </div>
+            <div class="pItem cartAmount">
+                <a href="#" class="down">-</a>
+                <input type="text" value="1" class="amount">
+                <a href="#" class="up">+</a>
+            </div>
+            <div class="pItem pWeight">2.7kg</div>
+            <div class="pItem pSubtotal">¥<span id="total_price">79</span></div>
+            <div class="pItem pInventory">现货</div>
+            <div class="pItem pOperator">
+                <div style="display:none;" class="getfavok" id="follow-348509-26420751">商品收藏成功</div>
+                <a id="cartDel" class="follow" pid="348509" cid="26420751" href="javascript:void(0)">收藏</a>&nbsp;&nbsp;
+                <a id="cartDel" class="remove" cid="main-0-26420751-348509" href="javascript:void(0)">删除</a>
+            </div>
+        </li>
+        <li></li>
+    </ul>
+    <div class="cartCountItem">
+        <div class="cartButtons">
+            <input type="button" value="删除选中的商品" class="cartclear removeSelect">
+            <input type="button" value="清空购物车" class="cartclear resetCart">
+        </div>
+        <div class="cartTotalItem">
+            <span id="all_Weight">重量总计：<span id="allWeight">5.4kg</span>（含包装）</span>
+            <span class="cartTitle">商品总计：</span><span class="cartPrice" id="allMoney2">¥158</span>
+        </div>
+    </div>
+</div>
+
+ <div class="shopbot">
+        <!-- link -->
+        <div class="link">
+            <div class="leftlink">
+                <img src="img/logo_1.png" alt="">
+                <ul>
+                    <li class="kefu">4006-917-666</li>
+                    <li>周一至周日09:00-20:00</li>
+                </ul>
+            </div>
+            <dl>
+                <dt>购物指南</dt>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+            </dl>
+            <dl>
+                <dt>购物指南</dt>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+            </dl>
+            <dl>
+                <dt>购物指南</dt>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+            </dl>
+            <dl>
+                <dt>购物指南</dt>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+            </dl>
+            <dl>
+                <dt>购物指南</dt>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+                <dd>积分制度</dd>
+            </dl>
+            <div class="rightlink">
+                <ul>
+                    <li><a href="#">手机客户端</a></li>
+                    <li><img src="img/er.png" alt=""></li>
+                </ul>
+                <ul>
+                    <li>官方微信</li>
+                    <li><img src="img/er.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <!-- bottom -->
+        <div class="bottom">
+            <div class="imgbox">
+                <img src="img/credit.png" alt="" class="imgla">
+                <img src="img/credit.png" alt="" class="imgsm">
+                <img src="img/cert.png" alt="">
+                <img src="img/bottom_sm.png" alt="">
+            </div>
+            <span>
+                <a href="#">关于我们</a>
+                <a href="#">联系我们</a>
+                <a href="#">招聘人才</a>
+                <a href="#">友情链接</a>
+                <em>Copyright© 顺丰优选 sfbest.com 版权所有</em>
+            </span><br>
+            <span>
+                <em>京公网安备11010502026831号</em>
+                <a href="#">京ICP证150325号</a>
+                <a href="#">食品经营许可证JY11113080533669号</a>
+                <a href="#"> 企业营业执照</a>
+            </span>
+        </div>
+ </div>
 </body>
 </html>

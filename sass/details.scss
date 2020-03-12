@@ -116,7 +116,7 @@ $color:#969696;
 }
 .detailbox{
     @include safe;
-    height: 2000px;
+    height: 1240px;
     margin-top: 40px;
     .leftdeta{
         width: 190px;
@@ -244,8 +244,10 @@ $color:#969696;
                        .minus,.puls{
                         width: 20px;
                         height: 30px;
-                       
                         border:1px solid #dadada;
+                        &:hover{
+                            cursor: pointer;
+                        }
                         }
                         .num{
                             width: 28px;
@@ -260,6 +262,7 @@ $color:#969696;
                             color: #557e00;
                             border:1px solid #dadada;
                             border-radius: 4px;
+                            cursor: pointer;
                             i{
                                 display: inline-block;
                                 margin-right: 8px;

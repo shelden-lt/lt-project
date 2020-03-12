@@ -36,6 +36,7 @@ $(function(){
     }).then(data => {
         console.log(data);
         var str = "";
+        var num = 1;
         for(let i = 0 ; i < data.data.length; i++){
             str +=
             `
@@ -46,7 +47,7 @@ $(function(){
                     <span> <a href="#">${data.data[i].pdesc}</a></span>
                 </div>
                 <div class="add">
-                    <span class="minus">-</span><span class="num">1</span><span class="puls">+</span>
+                    <span class="minus">-</span><span class="num">${num}</span><span class="puls">+</span>
                     <span class="addcar">
                         <i class="icon iconfont icon-gouwugouwuchedinggou"></i>
                         加入购物车
@@ -54,11 +55,23 @@ $(function(){
                 </div>
             </li>     
             `;
-            $(".liebiao").html(str);
+            
         }
+        $(".liebiao").html(str);
+        let index = 0;
+        $(".puls").eq(0).click(function(){
+            index = $(this).index();
+            num++;
+            $(".num").eq(index-1).text(num);
+        })
+        
+
+        $(".addcar").click(function(){
+          location.href="../shopcar.html"
+        })
+      
+        
     });
-    //加减
-    $(".minus").click(function(){
-        console.log(1)
-    })
+  
+    
 })
