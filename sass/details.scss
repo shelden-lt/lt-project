@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+    border: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+$width:1200px;
+$color:#969696;
+
+@mixin safe{
+    width: $width;
+    margin: 0 auto;
+}
+
+.detcon{
+    @include safe;
+    height: 422px;
+    padding-top: 30px;
+    .fada{
+        width: 410px;
+        height: 410px;
+        float: left;
+        margin-top: -22px;
+    }
+    .rightcon{
+        width: 580px;
+        height: 422px;
+        background-color: #fbfbfb;
+        float: right;
+        margin-right: 80px;
+        .ptitle{
+            height: 80px;
+           
+            p{
+                width: 37px;
+                height: 18px;
+                background-color: #6f9a09;
+                float: left;
+                border-radius: 4px;
+                margin-left: 15px;
+                margin-right: 5px;
+                color: #fff;
+                text-align: center;
+                line-height: 18px;
+            }
+            h5{
+                font-size: 18px;
+                color: #191c1f;
+            }
+
+        }
+        .pprice-c{
+           width: 583px;
+           height: 73px;
+           background-color: #fa8e19;
+           border-bottom: 3px solid #dddddd;
+           color: #fff;
+           position: relative;
+           i{
+               font-style: normal;
+               font-size: 12px;
+                display: inline-block;
+                padding: 50px 4px 0 13px;
+           }
+           b{
+               font-size: 29px;
+           }
+           span{
+               display: block;
+               position: absolute;
+               width: 83px;
+               height: 25px;
+               background-color: #ffe400;
+               font-size: 12px;
+               color: #df0000;
+               top: 8px;
+               left: 275px;
+               text-align: center;
+               line-height: 25px;
+           }
+        }
+        .pcon{
+            height: 85px;
+            padding-top: 40px;
+            .pAmount{
+                width: 81px;
+                height: 45px;
+                border: 1px solid #dadada;
+                float: left;
+                input{
+                    width: 53px;
+                    height: 36px;
+                    border: none;
+                    background-color: #fff;
+                    float: left;
+                    border-right: 1px solid #dadada;
+                    border-radius: 0;
+                }
+                span a{
+                    display: block;
+                    font-size: 12px;
+                    color: #6b6b6b;
+                    .p-add{
+                        width: 25px;
+                        height: 21px;
+                    }
+                    .p-reduce{
+                        width: 25px;
+                        height: 21px;
+                    }
+                }
+            }
+            .pBtn{
+                width: 160px;
+                height: 45px;
+                background-color: #669900;
+                float: left;
+                margin: 0 10px;
+                text-align: center;
+                line-height: 45px;
+                font-size: 18px;
+               color: #fff;
+            }
+            .quickBuy{
+                width: 160px;
+                height: 45px;
+                float: left;
+                background-color: #fa8e19;
+                text-align: center;
+                line-height: 45px;
+                font-size: 18px;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,73 +1,103 @@
 $(function(){
-    $(".logosafe .downlogo ul li").eq(0).mouseenter(function(){
-        $(".slidenav").show();
-    })
-    $(".logosafe .downlogo ul li a").mouseleave(function(){
-        $(".slidenav").hide();
-        $(".slidenav").mouseenter(function(){
-            $(this).show();
-        })
-        $(".slidenav").mouseleave(function(){
-            $(this).hide();
-        })
-    })
 
-//    $.post("http://jx.xuzhixiang.top/ap/api/goods/goods-add.php", {
-//         pname: "啤酒",
-//         pprice: 76,
-//         pimg: "../img/210x210_4.jpg",
-//         pdesc: "啤酒",
-//         uid: "33022"
-//       }).then(data => {
-//         console.log(data);
-//       }); 
-
-//  $.get("http://jx.xuzhixiang.top/ap/api/goods/goods-delete.php", {
-//         uid: 33022,
-//         pid: 197282,
-//         token: localStorage.getItem("token")
-//       }).then(data => {
-//         console.log(data);
-//       }); 
-
-
-    $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
-        uid: localStorage.getItem("uid")
-    }).then(data => {
-        console.log(data);
-        var str = "";
-        var num = 1;
-        for(let i = 0 ; i < data.data.length; i++){
-            str +=
+    var str = "";
+    var num = 1;
+    $.get("http://jx.xuzhixiang.top/ap/api/detail.php",{
+            id:localStorage.getItem("id")
+    },data=>{
+        console.log(data.data);
+       
+            str = 
             `
-            <li data-id = "${data.data[i].pid}">
-                <img src="${data.data[i].pimg}" alt="" class="pimg">
-                <div class="pricebox">
-                    <b> <i>￥</i>${data.data[i].pprice}</b><br>
-                    <span> <a href="#">${data.data[i].pdesc}</a></span>
-                </div>
-                <div class="add">
-                    <span class="minus">-</span><input type="text" class="num" value="${num}"><span class="puls">+</span>
-                    <span class="addcar">
-                        <i class="icon iconfont icon-gouwugouwuchedinggou"></i>
-                        加入购物车
-                    </span>
-                </div>
-            </li>     
+            <div class="fada">
+            <div class = "leftbox" id = "leftbox">
+            <div id ="leftimg" >
+             <img src="${data.data.pimg}" alt="" id = "leftbox_img">
+             <p class= "glass" id = "glass"></p>
+            </div>
+             <ul>
+                 <li><img src= "${data.data.pimg}" data-src = "${data.data.pimg}"></li>
+                 <li><img src= "${data.data.pimg}" data-src = "${data.data.pimg}"></li>
+                 <li><img src= "${data.data.pimg}" data-src = "${data.data.pimg}"></li>
+                 <li><img src= "${data.data.pimg}" data-src = "${data.data.pimg}"></li>
+             </ul>
+         </div>
+         <div class = "rightbox" id = "rightbox" style="background: url(${data.data.pimg}) no-repeat; background-size: 740px 700px;"
+        ></div>
+    </div>
+    <div class="rightcon">
+        <div class="ptitle">
+            <p>自营</p>
+            <h5>${data.data.pname}</h5>
+        </div>
+        <div class="pprice-c">
+            <i>￥</i> 
+            <b>${data.data.pprice}</b>
+            <span>开通优选会员</span>
+        </div>
+       <div class="pcon">
+            <div class="pAmount">
+                <span><input type="text" id="number" class="text" value="${num}"></span>
+                <span class="parent">
+                    <a href="#" id="add-sell-num" class="p-add">+</a>
+                    <a href="#" id="reduce-sell-num" class="p-reduce">-</a>
+                </span>
+            </div>
+            <div class="pBtn" id="cart-add-btn-sf">加入购物车</div>
+            <div class="quickBuy" id="quickBuy" >一键购买</div>
+       </div>
+    </div> 
             `;
-            
-        }
-        $(".liebiao").html(str);
-        $(".pimg").click(function(){
-            location.href="../shopcar.html"
-            
+       
+        $(".detcon").html(str);
+
+
+        $("#leftimg").mouseover(function(){
+            $("#glass").css({"display":"block"});
+            $("#rightbox").css({"display":"block"});
+           })
+           $("#leftimg").mouseleave(function(){
+            $("#glass").css({"display":"none"});
+            $("#rightbox").css({"display":"none"});
+           })
+           let r = 450 / 322;
+           $("#leftimg").mousemove(function(e) {
+              let evt = e || event;
+                 let l = evt.pageX - $("#leftimg").offset().left - $("#glass").width()/2;
+                 let t = evt.pageY - $("#leftimg").offset().top - $("#glass").height()/2;
+                 let mw = $("#leftimg").width() - $("#glass").width();
+                 let mh = $("#leftimg").height() - $("#glass").height();
+                 l = l <= 0 ? 0 : l >= mw ? mw : l;
+                 t = t <= 0 ? 0 : t >= mh ? mh : t;       
+           $("#glass").css({"left":l, "top":t});
+           $("#rightbox").css({"background-position-x":-l * r, "background-position-y":-t * r});
+           })
+
+        //加
+        $(".p-add").click(function(){
+            num++;
+            $(this).parent().siblings().children().val(num);
         })
-        $(".addcar").click(function(){
-          location.href="../shopcar.html"
+        //减
+        $(".p-reduce").click(function(){
+            num = $("#number").val();
+            if(num == 1){
+                num =1
+            }else{
+                num--;
+            }
+            $(this).parent().siblings().children().val(num);
         })
-      
-        
-    });
-  
-    
+        //购物车
+        $(".pBtn").click(function(){
+            $.get("http://jx.xuzhixiang.top/ap/api/add-product.php",{
+                uid:localStorage.getItem("uid"),
+                pid:localStorage.getItem("id"),
+                pnum : $("#number").val()
+            },data=>{
+                console.log(data)
+                location.href="shopcar.html"
+            })
+        })
+    }) 
 })

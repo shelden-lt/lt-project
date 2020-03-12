@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情列表</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="boot/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/details.js"></script>
+    <link rel="stylesheet" href="boot/css/bootstrap.min.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        vertical-align: middle;
+    }
+
+    .detcon{
+        position: relative;
+    }
+    .rightbox{
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        
+        left: 550px;
+        top: 30px;
+        display: none;
+        z-index: 10;
+    }
+    .leftbox {
+        width: 450px;
+        height: 450px;
+        position: relative;
+        box-sizing: border-box;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .leftbox img{
+        width: 100%;
+        height: 100%;
+    }
+    .leftbox ul{
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border:1px solid red;
+        border-top: none;
+    }
+    .leftbox ul li{
+        list-style: none;
+        width: 50px;
+        height: 50px;
+    }
+    .glass {
+        width: 322px;
+        height: 322px;
+        background-color: pink;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        box-sizing: border-box;
+    }
+</style>
+<body>
+      <!-- nav -->
+   <div class= "navbox">
+    <div class="navsafe">
+       <!-- 地址 -->
+       <span class="text">冷链配送 顺丰到家 送至：</span>
+       <div class="dropdown">
+          <button class="btndown">
+              <span class="caret"></span>
+              大连
+          </button>
+          <div  class="add-nav">
+              <p>
+                  请选择您的收货城市：
+                  <i></i>
+              </p>
+              <div class="city-middle">
+                  <ol>
+                      <li><a href="#">北京</a></li>
+                      <li><a href="#">上海</a></li>
+                      <li><a href="#">广州</a></li>
+                      <li><a href="#">深圳</a></li>
+                      <li><a href="#">天津</a></li>
+                      <li><a href="#">苏州</a></li>
+                      <li><a href="#">杭州</a></li>
+                      <li><a href="#">南京</a></li>
+                      <li><a href="#">无锡</a></li>
+                      <li><a href="#">青岛</a></li>
+                      <li><a href="#">武汉</a></li>
+                  </ol>
+              </div>
+              <div class="morecity">
+                  <div>更多城市：</div>
+                          <ul class="huadong">
+                              <li>华东：</li>
+                              <li>上海</li>
+                              <li>浙江</li>
+                              <li>江苏</li>
+                              <li>安徽</li>
+                          </ul>                        
+                          <ul class="huanan">
+                              <li>华南：</li>
+                              <li>广东</li>
+                              <li>福建</li>
+                              <li>海南</li>
+                              <li>广西</li>
+                          </ul>                                                             
+                          <ul class="huabei">
+                              <li>华北：</li>
+                              <li>北京</li>
+                              <li>天津</li>
+                              <li>河北</li>
+                              <li>山东</li>
+                              <li>山西</li>
+                              <li>内蒙古</li>
+                          </ul>                                       
+                          <ul class="huazhong">
+                              <li>华中：</li>
+                              <li> 湖北</li>
+                              <li>江西</li>
+                              <li>湖南</li>
+                              <li>河南</li>
+                          </ul>
+                          <ul class="dongbei">
+                              <li>东北：</li>
+                              <li>辽宁</li>
+                              <li>吉林</li>
+                              <li>黑龙江</li>
+                          </ul> 
+                          <ul class="xinan">
+                              <li>西南：</li>
+                              <li>重庆</li>
+                              <li>四川</li>
+                              <li>云南</li>
+                              <li>贵州</li>
+                          </ul>
+                          <ul class="xibei">
+                              <li>西北：</li>
+                              <li>陕西</li>
+                              <li>甘肃</li>
+                              <li>宁夏</li>
+                              <li>青海</li>
+                          </ul>
+              </div>
+          </div>
+        </div>
+        <!-- 导航 -->
+           <ul>
+               <li>嘿，欢迎来顺丰优选！</li>
+               <li>
+                   <a href="login.html" target="_blank">请登录</a>
+                   <span>|</span>
+                   <a href="resgin.html">免费注册</a>
+                   <div class="hot">
+                       <img src="img/hot.gif" alt="">
+                       <div class="hot-msg"><a href="#">新注册会员送100元券包</a></div>
+                   </div>
+               </li>
+               <li>
+                   <a href="#">我的订单</a>
+               </li>
+               <li class="active">
+                  <a href="#" class="you">我的优选</a>
+                  <span class="caret"></span>
+                  <ul class="dropdownmenu" aria-labelledby="dropdownMenu1">
+                      <li><a href="#">我的订单</a></li>
+                      <li><a href="#">我的积分</a></li>
+                      <li><a href="#">我的收藏</a></li>
+                      <li><a href="#">我的优选卡</a></li>
+                      <li><a href="#">我的优惠券</a></li>
+                  </ul>
+               </li>
+               <li>
+                   <i class="icon iconfont icon-shouji"></i>
+                   <a href="#">移动端客服</a>
+               </li>
+               <li><a href="#">在线客服</a></li>
+               <li class="active1">
+                  <a href="#" class="you1">帮助中心</a>
+                  <span class="caret"></span> 
+                      <ul class="dropdownmenu1" aria-labelledby="dropdownMenu1">
+                          <li><a href="#">购物指南</a></li>
+                          <li><a href="#">配送服务</a></li>
+                          <li><a href="#">支付方式</a></li>
+                          <li><a href="#">售后服务</a></li>
+                          <li><a href="#">客服邮箱</a></li>
+                          <li><a href="#">投诉与建议</a></li>
+                      </ul>
+               </li>
+               <li class="active2">
+                  <a href="#" class="daohang">网站导航</a>
+                  <span class="caret"></span>
+                  <div class="subnav">
+                      <dl>
+                          <dt class="title1">商品分类</dt>
+                          <dd>肉类海鲜</dd>
+                          <dd>新鲜果蔬</dd>
+                          <dd>速食冷藏</dd>
+                          <dd>酒水饮料</dd>
+                          <dd>休闲糖巧</dd>
+                          <dd>粮油干货</dd>
+                          <dd>冲调茶饮</dd>
+                          <dd>优选国际</dd>
+                      </dl>
+                      <dl>
+                          <dt class="title2">特色频道</dt>
+                          <dd>跨境直发</dd>
+                          <dd>企业专区</dd>
+                          <dd>红酒廊</dd>
+                          <dd>寰宇美食</dd>
+                      </dl>
+                      <dl>
+                          <dt class="title3">更多</dt>
+                          <dd>客户端</dd>
+                          <dd>关注我们</dd>
+                          <dd class="last">客服电话：4006-917-666</dd>
+                      </dl>
+                  </div>
+               </li>
+               <li>
+                  <span class="icon iconfont icon-weibo1 "></span>
+                  <span class="icon iconfont icon-tubiao-weixin "></span>
+               </li>
+           </ul>
+    </div>
+ </div>
+ <!-- logo -->
+ <div class="logobox">
+      <div class="logosafe">
+          <div class="toplogo">
+              <img src="img/indexLogo2019.png" alt="">
+              <div class="formbox">
+                  <form action="">
+                      <input type="text" placeholder="车厘子" class="textbox">
+                      <button  class="suo">搜 索</button>
+                  </form>
+                  <span>羊肉 葡萄 酒 牛排 牛奶 大米 白酒 虾 手机</span>
+              </div>
+              <div class="shopcar">
+                  <p><i  class="icon iconfont icon-gouwugouwuchedinggou"></i>我的购物车</p>
+                  <button  class="num">0</button>
+              </div>
+          </div>
+          <div class="downlogo">
+              <ul>
+                  <li><a href="#">精选商品分类</a></li>
+                  <li><a href="#" class="index">首页</a></li>
+                  <li><a href="#">优选国际</a></li>
+                  <li><a href="#">企业专区</a></li>
+                  <li><a href="#">优选会员</a></li>
+              </ul>
+              <img src="img/7a80fda907bf5107f6967add2a304a51.jpg" alt="">
+          </div>
+      </div>
+ </div>
+
+ <div class="detcon">
+    <!-- <div class="fada">
+        <div class = "leftbox" id = "leftbox">
+            <div id ="leftimg" >
+             <img src="img/160x160_2.jpg" alt="" id = "leftbox_img">
+             <p class= "glass" id = "glass"></p>
+            </div>
+             <ul>
+                 <li><img src= "img/160x160_2.jpg" data-src = "img/160x160_2.jpg"></li>
+                 <li><img src= "img/160x160_2.jpg" data-src = "img/160x160_2.jpg"></li>
+                 <li><img src= "img/160x160_2.jpg" data-src = "img/160x160_2.jpg"></li>
+                 <li><img src= "img/160x160_13.jpg" data-src = "img/160x160_13.jpg"></li>
+             </ul>
+         </div>
+         <div class = "rightbox" id = "rightbox"></div>
+    </div>
+    <div class="rightcon">
+        <div class="ptitle">
+            <p>自营</p>
+            <h5>河南焦作温县 沙土铁棍山药(简装) L50cm 净重2.5kg</h5>
+        </div>
+        <div class="pprice-c">
+            <i>￥</i> 
+            <b>29</b>
+            <span>开通优选会员</span>
+        </div>
+       <div class="pcon">
+            <div class="pAmount">
+                <span><input type="text" id="number" class="text" value="1"></span>
+                <span>
+                    <a href="#" id="add-sell-num" class="p-add">+</a>
+                    <a href="#" id="reduce-sell-num" class="p-reduce">-</a>
+                </span>
+            </div>
+            <div class="pBtn" id="cart-add-btn-sf">加入购物车</div>
+            <div class="quickBuy" id="quickBuy" >一键购买</div>
+       </div>
+    </div> -->
+ </div>
+ <!-- <script>
+    //一获取元素
+    var rightbox = document.querySelector("#rightbox");
+    var leftbox = document.querySelector("#leftbox");
+    var leftimg = document.getElementById("leftimg")
+    var glass = document.getElementById("glass");
+    var leftbox_img = document.getElementById("leftbox_img");
+    var imgs = document.querySelectorAll("ul li img");
+    //二取消图片的默认样式
+    leftimg.onselectstart = function(e){
+        e.preventDefault();
+    }
+    //十一 算出大图与小图的比例，让他们等比例所发
+    var bili = 700 / 450;
+    //三当鼠标进入盒子，显示glass和rightbox
+    leftimg.onmouseenter = function(){
+        glass.style.display = "block";
+        rightbox.style.display = "block";          
+    }
+    //六调用获取元素距离页面的距离的函数，用一个变量保存值
+    var leftbox_page = offset(leftbox);
+    //五给鼠标绑定一个移动事件，让他在leftbox里移动
+        //鼠标移动
+        leftimg.onmousemove = function(e){
+            //获取页面卷动值scrolltop
+            var scrolltopy = document.body.scrollTop || document.documentElement.scrollTop;
+            //检测
+            console.log(1);
+            //获取鼠标到页面的距离可以是e.page但是由于有兼容问题，所以不能用，但是可以用client+scrolltop 代替。水平方向因为有安全区，所以不需要
+            var mousenowx = e.clientX;
+            var mousenowy = e.clientY + scrolltopy;
+    //七获取元素到页面的距离
+        var leftbox_x = leftbox_page.left;
+        var leftbox_y = leftbox_page.top;
+    //八、鼠标在元素里的距离  = 鼠标到页面的距离 —— 元素到页面的距离
+       var countx= mousenowx - leftbox_x - (glass.clientWidth / 2) ;
+       var county = mousenowy - leftbox_y -(glass.clientWidth / 2);
+    // 九判断glass是否出边境
+    if(countx < 0){
+        countx = 0;
+    }else if (countx > leftbox.clientWidth - glass.clientWidth){
+        countx =  leftbox.clientWidth - glass.clientWidth;
+    }
+    if(county < 0){
+        county = 0;
+    }else if (county > leftbox.clientHeight - glass.clientHeight){
+        county =  leftbox.clientHeight - glass.clientHeight;
+    }
+    glass.style.left = countx + "px";
+    glass.style.top  = county + "px";
+    //十移动glass的时候rightbox的背景定位改变
+    rightbox.style.backgroundPositionX = - countx * bili +"px";
+    rightbox.style.backgroundPositionY = - county * bili + "px";
+    }
+    //十三
+    //四鼠标出来的时候隐藏glass和rightbox
+    leftimg.onmouseleave = function(){
+        glass.style.display = "none";
+        rightbox.style.display = "none";
+    }                   
+        //获取元素距离页面的距离
+        function offset(dom){
+                //初始默认值为当前元素到他的定位父元素的距离，应该第一个元素不需要计算边框
+                var obj ={
+                    left: dom.offsetLeft,
+                    top: dom.offsetTop
+                }
+                    //因为最里面的元素，我计算的时候不需要计算他的边框                        
+                //循环
+                dom = dom.offsetParent;
+                while (dom != document.body){
+                    //计算从这个元素的外边框到他的定位父元素的边框内的距离
+                    obj.left = dom.offsetLeft + dom.clientLeft;
+                    //obj里的left等于当前元素到定位父元素的边框内的距离+边框的距离
+                    obj.top = dom.offsetTop + domclientTop;
+                    //当前元素计算完以后，在将他改为他的定位父元素
+                    dom = dom.offsetParent;
+                }
+                return obj
+            }
+        //循环li里的img 并且给每个img绑定事件
+       
+            for(var i = 0 ; i < imgs.length; i++){
+                imgs[i].onclick = rightbox_img;
+            }
+            function rightbox_img(){
+                    leftbox_img.src = this.src;//因为src是img的标准属性，所以可以直接点得到
+                    var datasrc = this.getAttribute("data-src");
+                    rightbox.style.backgroundImage = "url("+ datasrc +")";
+                }
+</script> -->
+</body>
+</html>
