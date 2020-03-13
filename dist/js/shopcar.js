@@ -1,6 +1,7 @@
 $(function(){
     var str = "";
     var num = 0;
+    var sum = 0;
     $.get("http://jx.xuzhixiang.top/ap/api/cart-list.php",{
         id:33022
     },data=>{
@@ -10,7 +11,7 @@ $(function(){
             `
         <li data-id="${data.data[i].pid}" class="lis">
             <div class="pItem pCheckbox">
-                <input name="cart_list"  type="checkbox">
+                <input name="cart_list"  type="checkbox" class="ck">
             </div>
             <div class="pItem cart_pimg">
                 <img src="${data.data[i].pimg}"  width="62" height="62">    
@@ -95,8 +96,28 @@ $(function(){
         })
         //全选
         $(".selectAll").click(function(){
-            $(this).prop("checked",true)
-            $(".lis").children(".pCheckbox").children().prop("checked",true)
+            sum++;
+            if(sum % 2 == 1){
+                $(this).parent().parent().siblings(".cartcontent").children(".lis").children().children(".ck").prop("checked",true);
+                sum = 1;
+            }else{
+                $(this).parent().parent().siblings(".cartcontent").children(".lis").children().children(".ck").prop("checked",false);
+                sum = 0;
+            }
         })
+        
+        var count = 0
+        var length = $(".lis").length;
+        $(".lis").children(".pCheckbox").children().click(function(){
+            count++;
+            console.log(count)
+            if(count == length){
+                $(this).parent().parent().parent().siblings(".cartThead").children(".tCheckbox").children().prop("checked",true)
+            }else{
+                $(this).parent().parent().parent().siblings(".cartThead").children(".tCheckbox").children().prop("checked",false)
+            }
+        })
+
+        
     })
 })
